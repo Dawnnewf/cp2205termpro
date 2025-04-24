@@ -1,0 +1,98 @@
+body {
+    background-color: #ddcebb;
+}
+
+.container {
+    max-width: 95%;
+    margin-top: 5vh;
+}
+
+.card {
+    border: 5px solid #4a3636;
+    border-radius: 20px;
+    margin: 3%;
+}
+
+.card-header {
+    background-color: #4a3636;
+    color: white;
+    font-size: 18px;
+    font-style: italic;
+    font-weight: bolder;
+    border-radius: 20px;
+    min-height: 120px;
+    text-align: center;
+    padding-top: 10%;
+}
+
+.card-body {
+    padding: 10%;
+    background-color: #f0e9d4;
+    color: #4a3636;
+}
+
+.dvd-img {
+    border: 3px solid #4a3636;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    margin-bottom: 5%;
+    max-width: 90%;
+}
+
+span.lbl {
+    display: inline-block;
+    font-weight: bold;
+    color: #4a3636;
+}
+
+span.dvd-info {
+    padding-left: 5%;
+}
+
+.card-footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #4a3636;
+    height: 100px;
+}
+
+.btn-primary {
+    background-color: #ddcebb;
+    color: #4a3636;
+    font-weight: bold;
+    margin: 3%;
+    width: 100px;
+}
+
+.btn-warning {
+    background-color: #eec134;
+    color: #4a3636;
+    font-weight: bold;
+    margin: 3%;
+    width: 100px;
+}
+
+.btn-danger {
+    background-color: #7b2530;
+    color: white;
+    font-weight: bold;
+    margin: 3%;
+    width: 100px;
+}
+
+.btn-secondary {
+    background-color: #4a3636;
+    color: #ddcebb;
+    font-weight: bold;
+    margin: 2%;
+    width: 250px;
+    height: 50px;
+    line-height: 200%;
+}
+
+.create-btn {
+    display: flex;
+    justify-content: center;
+}
