@@ -25,4 +25,11 @@ class Dvd extends Model
     public function location() {
         return $this->belongsTo(Location::class);
     }
+
+    public function scopeFilter($query, array $filters) {
+        //search
+        if (isset($filters['search'])) {
+            $query->where('title', 'like', '%' . $filters['search'] . '%' );
+        }
+    }
 }

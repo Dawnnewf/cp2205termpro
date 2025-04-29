@@ -10,11 +10,11 @@
             </option>
 
             @foreach ($categories as $category)
-                @if ($category->id == $current)
-                    <option value="{{ $category->id }}" selected>{{ $category->name }}</option>
-                @else
-                    <option value="{{ $category->id }}">{{ $category->name }}</option>
-                @endif
+            @if ($category->id == $current)
+            <option value="{{ $category->id }}" selected>{{ $category->name }}</option>
+            @else
+            <option value="{{ $category->id }}">{{ $category->name }}</option>
+            @endif
             @endforeach
 
         </select>
@@ -40,13 +40,13 @@
 </div>
 
 <script>
-    const filterByCategory = (url) => {
-        const e = document.getElementById('category');
+const filterByCategory = (url) => {
+    const e = document.getElementById('category');
 
-        let link = url;
+    let link = url;
 
-        link += "?category=" + e.value;
-        location.href = link;
-    }
+    link += "?category=" + e.value;
+    location.href = link;
+}
 </script>
 </header>

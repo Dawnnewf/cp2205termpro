@@ -18,6 +18,8 @@ class DvdController extends Controller
     public function index()
     {
         $dvds = Dvd::all();
+        $dvds = Dvd::all()->filter(request('search'));
+
         $dvds = Dvd::paginate(8);
 
         return view('dvds.index', compact('dvds'));
