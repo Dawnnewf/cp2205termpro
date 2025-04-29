@@ -1,9 +1,9 @@
-@extends('layouts.app')
+@extends('layouts.copyapp')
 
 @section('content')
     <div class="card">
 
-        <div class="card-header">Edit Dvd Format</div>
+        <div class="card-header d-flex justify-content-center align-items-center">Edit Dvd Format</div>
 
         <div class="card-body">
             <form action="{{ route('dvdformats.update', $dvdformat->id) }}" method="post">

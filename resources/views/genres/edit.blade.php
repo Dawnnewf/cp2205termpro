@@ -1,9 +1,9 @@
-@extends('layouts.app')
+@extends('layouts.copyapp')
 
 @section('content')
     <div class="card">
 
-        <div class="card-header">Edit Genre</div>
+        <div class="card-header d-flex justify-content-center align-items-center">Edit Genre</div>
 
         <div class="card-body">
             <form action="{{ route('genres.update', $genre->id) }}" method="post">

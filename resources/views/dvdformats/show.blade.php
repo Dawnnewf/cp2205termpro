@@ -1,9 +1,9 @@
-@extends('layouts.app')
+@extends('layouts.copyapp')
 
 @section('content')
     <div class="card">
 
-        <div class="card-header"> {{ $dvdformat->dvdFormat }} </div>
+        <div class="card-header d-flex justify-content-center align-items-center"> {{ $dvdformat->dvdFormat }} </div>
 
         <div class="card-body">
 

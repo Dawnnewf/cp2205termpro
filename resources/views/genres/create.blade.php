@@ -1,8 +1,8 @@
-@extends('layouts.app')
+@extends('layouts.copyapp')
 
 @section('content')
     <div class="card">
-        <div class="card-header">Create New DVD Storage Genre</div>
+        <div class="card-header d-flex justify-content-center align-items-center">Create New DVD Storage Genre</div>
 
         <div class="card-body">
             <form action="{{ route('genres.store') }}" method="post">

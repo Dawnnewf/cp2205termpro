@@ -32,6 +32,7 @@ class DvdFormatController extends Controller
     {
         $validateData = $request->validate([
             'dvdFormat' => 'required',
+            //'dvdFormat' => 'required|in:DVDRip,DVDSCR,HDTV,TVRip,HDTVRip,WEBRip,Blu-Ray,4K,DVD'
         ]);
 
         $dvdformat = new Dvdformat;

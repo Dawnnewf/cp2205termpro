@@ -26,8 +26,8 @@ class DvdFactory extends Factory
         return [
             'title' => $title,
             'imageLink' => 'https://place-hold.it/640x480/' . fake()->rgbColor() . "/ffffff.png&fontsize=16&text=$fwtitle",
-            'website' => 'www.' . fake()->domainName() . '/' . $slug,
-            'imdbLink' => 'www.imdb.com/' . $slug,
+            'website' => 'https://www.' . fake()->domainName() . '/' . $slug,
+            'imdbLink' => 'https://www.imdb.com/' . $slug,
             'starRating'=> fake()->numberBetween(1, 5),
             'numDisks' => fake()->numberBetween(1, 10),
 

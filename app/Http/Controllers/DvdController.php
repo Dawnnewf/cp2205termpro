@@ -3,6 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\Models\Dvd;
+use App\Models\Dvdformat;
+use App\Models\Location;
+use App\Models\Genre;
+use App\Models\Type;
+
 use Illuminate\Http\Request;
 
 class DvdController extends Controller
@@ -13,6 +18,7 @@ class DvdController extends Controller
     public function index()
     {
         $dvds = Dvd::all();
+        $dvds = Dvd::paginate(8);
 
         return view('dvds.index', compact('dvds'));
     }
@@ -22,7 +28,11 @@ class DvdController extends Controller
      */
     public function create()
     {
-        return view('dvds.create');
+        $dvdformats = Dvdformat::all();
+        $types = Type::all();
+        $genres = Genre::all();
+
+        return view('dvds.create', compact('dvdformats', 'types', 'genres'));
     }
 
     /**
@@ -68,7 +78,9 @@ class DvdController extends Controller
      */
     public function show(Dvd $dvd)
     {
-        return view('dvds.show', compact('dvd'));
+        $genres = Genre::all();
+
+        return view('dvds.show', compact('dvd', 'genres'));
     }
 
     /**
@@ -77,7 +89,12 @@ class DvdController extends Controller
     public function edit(Dvd $dvd)
     {
         $dvds = Dvd::all();
-        return view('dvds.edit', compact('dvd'));
+        $dvdformats = Dvdformat::all();
+        $types = Type::all();
+        $genres = Genre::all();
+        $locations = Location::all();
+
+        return view('dvds.edit', compact('dvd', 'dvdformats', 'types', 'genres', 'locations'));
     }
 
     /**
@@ -85,8 +102,32 @@ class DvdController extends Controller
      */
     public function update(Request $request, Dvd $dvd)
     {
-        $dvd->dvd = $request->dvd;
-        $dvd->save();
+        $validate = $request->validate([
+            'title' => 'required',
+            'dvdformat_id' => 'required',
+            'type_id' => 'required',
+            'location_id' => 'required',
+            'imageLink' => 'required',
+            'website' => 'required',
+            'imdbLink' => 'required',
+            'starRating' => 'required',
+            'numDisks' => 'required',
+        ]);
+
+        $dvd->title = $request->title;
+        $dvd->dvdformat_id = $request->dvdformat_id;
+        $dvd->type_id = $request->type_id;
+        $dvd->location_id = $request->location_id;
+        $dvd->imageLink = $request->imageLink;
+        $dvd->website = $request->website;
+        $dvd->imdbLink = $request->imdbLink;
+        $dvd->starRating = $request->starRating;
+        $dvd->numDisks = $request->numDisks;
+
+        $dvd->update();
+        //dd($request->genres);
+
+        $dvd->genres()->sync($request->genres);
 
         return redirect('dvds')->with('success', 'DVD has been updated.');
     }

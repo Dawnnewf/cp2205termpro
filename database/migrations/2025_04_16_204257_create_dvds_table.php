@@ -22,7 +22,7 @@ class CreateDvdsTable extends Migration
             $table->string('imageLink');
             $table->string('website');
             $table->string('imdbLink');
-            $table->integer('starRating');
+            $table->float('starRating');
             $table->integer('numDisks');
             $table->integer('numEpisode');
             $table->timestamps();

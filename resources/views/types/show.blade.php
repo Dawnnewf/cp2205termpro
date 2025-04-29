@@ -1,9 +1,9 @@
-@extends('layouts.app')
+@extends('layouts.copyapp')
 
 @section('content')
     <div class="card">
 
-        <div class="card-header"> {{ $type->type }} </div>
+        <div class="card-header d-flex justify-content-center align-items-center"> {{ $type->type }} </div>
 
         <div class="card-body">
 

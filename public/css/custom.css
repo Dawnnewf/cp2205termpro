@@ -7,6 +7,12 @@ body {
     margin-top: 5vh;
 }
 
+
+.top-menu {
+    background-color: #4a3636;
+    color: white;
+}
+
 .card {
     border: 5px solid #4a3636;
     border-radius: 20px;
@@ -22,13 +28,13 @@ body {
     border-radius: 20px;
     min-height: 120px;
     text-align: center;
-    padding-top: 10%;
 }
 
 .card-body {
-    padding: 10%;
+    padding: 5% 10%;
     background-color: #f0e9d4;
     color: #4a3636;
+    border-radius: 0 0 20px 20px;
 }
 
 .dvd-img {
@@ -36,6 +42,7 @@ body {
     border-radius: 15px;
     display: flex;
     align-items: center;
+    justify-content: center;
     margin-bottom: 5%;
     max-width: 90%;
 }
@@ -46,8 +53,8 @@ span.lbl {
     color: #4a3636;
 }
 
-span.dvd-info {
-    padding-left: 5%;
+span.dvd-links {
+    text-decoration: underline;
 }
 
 .card-footer {
@@ -96,3 +103,59 @@ span.dvd-info {
     display: flex;
     justify-content: center;
 }
+
+datalist {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    writing-mode: vertical-lr;
+    width: 500px;
+    color: #4a3636;
+    font-style: italic;
+}
+
+option {
+    padding: 0;
+}
+
+input[type="range"] {
+    width: 500px;
+    margin: 0;
+}
+
+.form-group label {
+    display: inline-block;
+    font-weight: bold;
+    color: #4a3636;
+    width: 30%;
+}
+
+.form-control, .stars {
+    display: inline-block;
+    width: 65%;
+}
+
+.fa-stack {
+    accent-color: #4a3636;
+}
+
+#search-filter {
+    border: 3px groove #4a3636;
+    border-radius: 20px;
+    width: 80%;
+}
+
+.srhead {
+    font-style: italic;
+    color: #4a3636;
+}
+
+.ptitle {
+    font-style: italic;
+    color: #4a3636;
+}
+
+li {
+    list-style-type: disc;
+}
+<i class="fa-regular fa-star"></i>
