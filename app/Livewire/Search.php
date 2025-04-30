@@ -8,6 +8,7 @@ use App\Models\Genre;
 use App\Models\Type;
 
 use Livewire\Component;
+use Illuminate\Support\Str;
 
 class Search extends Component
 {
@@ -19,6 +20,8 @@ class Search extends Component
     public $ratings;
     public $category = "";
     public $subcategory = "";
+    public $filterValue;
+    public $sortValue;
 
     public function render()
     {
@@ -41,7 +44,7 @@ class Search extends Component
                 $this->showSubc = true;
                 break;
             case 'rating':
-                $subcategories;
+                $subcategories = $this->ratings;
                 $this->showSubc = true;
                 break;
             default:
@@ -53,10 +56,18 @@ class Search extends Component
     }
 
     public function mount() {
-        $this->ratings = [1, 2, 3, 4, 5];
+        $this->ratings = [ '0.5'=>'0.5', '1.0'=>'1.0', '1.5'=>'1.5', '2.0'=>'2.0', '2.5'=>'2.5', '3.0'=>'3.0', '3.5'=>'3.5', '4.0'=>'4', '4.5'=>'4.5', '5.0'=>'5.0' ];
     }
 
-    public function filter() {
-        $this->js('alert("testing {{$this->subcategory}}")');
+    public function filter($url) {
+        $base = Str::before($url, '?');
+
+        $this->js('filterByCategory("'. $base . '", "'. $this->category . '", "'. $this->filterValue . '" )');
+    }
+
+    public function orderBy($url) {
+        $base = Str::before($url, '?');
+
+        $this->js('filterBySort("'. $base . '", "'. $this->category . '", "'. $this->sortValue . '" )');
     }
 }

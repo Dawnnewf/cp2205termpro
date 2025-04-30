@@ -141,5 +141,16 @@
         <div class="create-btn">
             <a href="{{ route('dvds.create') }}" class="btn btn-secondary">Create New DVD</a>
         </div>
+
+        <div>
+            <form action="template" method="POST">
+                @csrf
+                <select name="template" id="template">
+                    <option value="default">Default</option>
+                    <option value="red">Red</option>
+                    <option value="blue">Blue</option>
+                </select>
+            </form>
+        </div>
     @endauth
 @endsection

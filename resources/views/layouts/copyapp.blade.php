@@ -11,6 +11,14 @@
     <link rel="stylesheet" href="/css/custom.css">
     <title>My App</title>
 </head>
+{{--
+@if (session()->get('template'))
+    if red body class=red
+    if blue body class=blue
+@elseif
+    normal stuff
+@endif
+ --}}
 
 <body>
     <div class="container">
